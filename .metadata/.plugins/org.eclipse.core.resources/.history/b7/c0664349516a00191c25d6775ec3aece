@@ -1,0 +1,99 @@
+package firstProject;
+
+public class LinkedList {
+
+	Node head;
+	int size;
+	public class Node {
+
+		int data;
+		Node nextNode;
+	}
+
+	public void add(int data) {
+
+		Node node = new Node();
+		node.data = data;
+		node.nextNode = null;
+
+		if (head == null) {
+			node.nextNode=head;
+			head = node;
+
+		} else {
+			Node temp = head;
+			while (temp.nextNode != null) {
+				temp = temp.nextNode;
+			}
+			temp.nextNode = node;
+			
+			
+		}
+		size++;
+	}
+	
+	public void display() {
+		if(head==null) {
+			return ;
+		}
+		Node temp=head;
+		while(temp.nextNode!=null) {
+			System.out.println(temp.data);
+			temp=temp.nextNode;
+		}
+		System.out.println(temp.data);
+	}
+	public void size() {
+		System.out.println(" size of list "+size);
+	}
+	public void delete(int ele) {
+		if(head==null) {
+			return;
+		}			
+		Node temp=head;
+		if(temp!=null) {
+			if(temp.data==ele) {
+				head=temp.nextNode;
+				return;
+			}
+			
+		}
+		else {
+
+			Node prev=head;
+			while(temp.nextNode!=null &&temp.data==ele) {
+					prev.nextNode=temp.nextNode.nextNode;
+					temp.nextNode=prev.nextNode;
+				}
+				prev=temp;
+				temp=temp.nextNode;
+			}
+			
+		}
+	
+	public void remove(int el) {
+		// Store head node 
+        Node temp = head, prev = null; 
+  
+        // If head node itself holds the key to be deleted 
+        if (temp != null && temp.data == el) 
+        { 
+            head = temp.nextNode; // Changed head 
+            return; 
+        } 
+  
+        // Search for the key to be deleted, keep track of the 
+        // previous node as we need to change temp.next 
+        while (temp != null && temp.data != el) 
+        { 
+            prev = temp; 
+            temp = temp.nextNode; 
+        }     
+  
+        // If key was not present in linked list 
+        if (temp == null) return; 
+  
+        // Unlink the node from linked list 
+        prev.nextNode = temp.nextNode; 
+	}
+}

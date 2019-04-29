@@ -1,0 +1,16 @@
+package invetoryDetails;
+
+import java.util.Scanner;
+
+import org.codehaus.jackson.map.ObjectMapper;
+
+public class Inventory {
+	public static void main(String[] args) {
+		
+	Scanner sc=new Scanner(System.in);
+	String path="/home/admin1/invetory.json";
+	ObjectMapper mapper=new ObjectMapper();
+	
+	}
+
+}

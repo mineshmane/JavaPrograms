@@ -1,0 +1,72 @@
+package firstProject;
+
+public class LinkedList {
+
+	Node head;
+	int size;
+	public class Node {
+
+		int data;
+		Node nextNode;
+	}
+
+	public void add(int data) {
+
+		Node node = new Node();
+		node.data = data;
+		node.nextNode = null;
+
+		if (head == null) {
+			node.nextNode=head;
+			head = node;
+
+		} else {
+			Node temp = head;
+			while (temp.nextNode != null) {
+				temp = temp.nextNode;
+			}
+			temp.nextNode = node;
+			
+			
+		}
+		size++;
+	}
+	
+	public void display() {
+		if(head==null) {
+			return ;
+		}
+		Node temp=head;
+		while(temp.nextNode!=null) {
+			System.out.println(temp.data);
+			temp=temp.nextNode;
+		}
+		System.out.println(temp.data);
+	}
+	public void size() {
+		System.out.println(" size of list "+size);
+	}
+	public void delete(int ele) {
+		if(head==null) {
+			return;
+		}			Node temp=head;
+		if(head!=null) {
+			if(temp.data==ele) {
+				head=head.nextNode;
+			}
+			
+		}
+		else {
+
+			Node tem=head;
+			while(temp!=null) {
+				if(temp.data==ele) {
+					tem=temp.nextNode.nextNode;
+					temp.nextNode=tem;
+				}
+				temp=temp.nextNode;
+			}
+			
+		}
+	}
+}

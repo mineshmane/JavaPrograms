@@ -1,0 +1,13 @@
+package invetoryDetails;
+
+import org.codehaus.jackson.map.ObjectMapper;
+
+public class Inventory {
+	public static void main(String[] args) {
+		
+	
+	ObjectMapper mapper=new ObjectMapper();
+	
+	}
+
+}

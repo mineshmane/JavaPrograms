@@ -1,0 +1,350 @@
+package demo.com;
+
+public class LinkedList<T> {
+
+	public class Node {
+		T data;
+		Node next;
+
+	}
+
+	Node head;
+	int counter = 0;
+
+	public T getlast() {
+		Node temp = head;
+		while (temp.next != null) {
+			temp = temp.next;
+		}
+		System.out.println(temp.data + " Returning");
+		return temp.data;
+	}
+
+//add node at last
+	public T insertatLast(T data) {
+		Node newNode = new Node();
+		newNode.data = data;
+		newNode.next = null;
+		counter++;
+		if (head == null) {
+			head = newNode;
+
+		} else {
+			Node node = head;
+			while (node.next != null) {
+				node = node.next;
+			}
+			node.next = newNode;
+		}
+		return data;
+	}
+
+	public void insertAtPosition(int position, T data) {
+		Node node = new Node();
+		node.data = data;
+		node.next = null;
+		counter++;
+
+		// if head is null and position is Not zero then exit.
+		if (head == null) {
+			if (position != 0) {
+				return;
+			}
+
+		}
+		if (head != null && position == 0) {
+			node.next = head;
+			head = node;
+			return;
+		}
+
+		else {
+			Node current = head;
+			Node prev = head;
+			int i = 0;
+			while (i < position) {
+				prev = current;
+				current = current.next;
+				if (current == null) {
+					break;
+				}
+				i++;
+			}
+			node.next = current;
+			prev.next = node;
+
+		}
+	}
+
+	public void show() {
+
+		Node n = head;
+
+		while (n.next != null) {
+			System.out.print(n.data + " ");
+			n = n.next;
+		}
+		System.out.println(n.data); // Retrieving last element
+	}
+
+	public void searchByKey(T element) {
+		System.out.println("callede");
+		Node temp = head;
+		if (head == null) {
+			isEmpty();
+		}
+		while (temp != null && temp.next != null) {
+
+			if (temp.data == element) {
+				System.out.println(element + " is found ");
+				// return true;
+			}
+			temp = temp.next;
+
+		}
+		if (temp.next == null)
+			if (temp.data == element) {
+				System.out.println("element is found  " + element);
+				// return true;
+
+			} else {
+
+				System.out.println("element  not found");
+				// return false;
+			}
+	}
+
+	public boolean isEmpty() {
+		if (head == null) {
+			System.out.println("Emty list");
+			return true;
+		}
+		System.out.println("not Empty list");
+		return false;
+	}
+
+	public int SizeofList() {
+		System.out.println(" size is " + counter);
+		return counter;
+	}
+
+	// find middle element in the list
+
+	public void findMiddleElement() {
+
+		Node temp = head;
+		if (head != null) {
+			int middle = counter / 2;
+			for (int i = 0; i < middle; i++) {
+				temp = temp.next;
+
+			}
+			System.out.println(temp.data + " is middle element at index " + middle);
+		}
+	}
+
+	public void insertMiddle(T data) {
+		Node newNode = new Node(); // if list is empt
+		newNode.data = data;
+		if (head == null)
+			head = newNode;
+
+		else { // get a new node //
+				// Node newNode = New Node();
+
+			// assign values to the slow // and fast pointers
+			Node slow = head;
+			Node fast = head.next;
+
+			while (fast != null && fast.next != null) { // move slow pointer to next node
+				slow = slow.next;
+
+				// move fast pointer two nodes // at a time
+				fast = fast.next.next;
+			}
+
+			// insert the 'newNode' and adjust // the required links
+			newNode.next = slow.next;
+			slow.next = newNode;
+		}
+	}
+
+	public void insertAtMid(T data) {
+		Node node = new Node();
+		node.data = data;
+
+		Node curr = head;
+		Node prev = head;
+
+		int middle = counter / 2;
+		for (int i = 0; i < middle; i++) {
+
+			prev = curr;
+			curr = curr.next;
+			System.out.println();
+		}
+		node.next = curr;
+		prev.next = node;
+	}
+
+	public void deleteByposition(int position) {
+		// If linked list is empty
+		if (head == null)
+			return;
+
+		// Store head node
+		Node temp = head;
+
+		// If head needs to be removed
+		if (position == 0) {
+			head = temp.next; // Change head
+			return;
+		}
+
+		// Find previous node of the node to be deleted
+		for (int i = 0; temp != null && i < position - 1; i++)
+			temp = temp.next;
+
+		// If position is more than number of ndoes
+		if (temp == null || temp.next == null)
+
+			return;
+
+		// Node temp->next is the node to be deleted
+		// Store pointer to the next of node to be deleted
+		Node next = temp.next.next;
+
+		temp.next = next; // Unlink the deleted node from list
+	}
+
+	public void DeleteByindex(int index) {
+		try {
+			Node curr = head;
+			if (head == null) {
+				return;
+			}
+			if (index == 0) {
+
+				head = curr.next;
+			}
+			if (index > counter) {
+				System.out.println(" index is outof bound ");
+			} else {
+
+				for (int i = 0; i < index - 1; i++) {
+					curr = curr.next;
+				}
+
+				Node temp = curr.next.next;
+				curr.next = temp;
+			}
+		} catch (Exception e) {
+			System.out.println("Index out of bound");
+
+		}
+
+	}
+
+	public void searchByindex(int index) {
+		try {
+			Node curr = head;
+			if (head == null) {
+				return;
+			}
+			if (index == 0) {
+
+				head = curr.next;
+				System.out.println("elemet found " + curr.data);
+			}
+			if (index > counter) {
+				System.out.println(" list is not much elements");
+			} else {
+				for (int i = 0; i < index; i++) {
+					curr = curr.next;
+				}
+				System.out.println("at index " + index + " elemet " + curr.data);
+				Node temp = curr.next.next;
+				curr.next = temp;
+			}
+
+		} catch (Exception e) {
+			System.out.println("Index out of bound");
+
+		}
+
+	}
+
+	public void searchbyvalue(T value) {
+
+		Node newNode = head; // making n as head node
+		int counter = 0;
+		while (newNode != null) {
+			if (newNode.data.equals(value)) // comparing data with user search value
+			{
+				System.out.println(value + " found at index " + counter);
+
+			}
+			newNode = newNode.next;
+			counter++;
+		}
+
+	}
+
+	public void deleteByKey(T key) {
+		Node temp = head;
+		Node tempStore = head;
+
+		if (head == null) {
+			return;
+		}
+		if (temp != null && temp.data == key) {
+			System.out.println("element is at first position");
+			head = temp.next; // Changed head
+			return;
+		}
+		while (temp.next != null) {
+
+			if (temp.data == key) {
+				System.out.println("key is found and deleted ");
+				tempStore.next = temp.next.next;
+
+				temp.next = tempStore;
+			}
+			tempStore = temp;
+			temp = temp.next;
+		}
+		if (temp.next == null) {
+			if (temp.data == key)
+
+			{
+				System.out.println("element is at last posiotn ");
+				tempStore.next = null;
+			}
+		}
+	}
+
+	public void delete(T ele)
+
+	{
+		Node newNode = head;
+		Node node = head;
+		counter--;
+		if (newNode.data == ele) // checking head element with user search element to delete
+		{
+			System.out.println("element at firts position ");
+			head = head.next; // changing reference value
+		}
+		while (newNode != null) {
+			if (newNode.data == ele) // checking for the element in list
+			{	System.out.println(" elemet found");
+				node.next = newNode.next; // changing reference value
+			}else {
+				System.out.println("element not found");
+			}
+			node = newNode;
+			newNode = newNode.next;
+		}
+		System.out.println(" element not found ");
+	}
+
+}

@@ -1,0 +1,15 @@
+package firstProject;
+
+public class LinkedList {
+	
+	public class Node{
+		
+		int data;
+		Node nextNode;
+	}
+	
+	public void add(int data) {
+		
+	}
+
+}
