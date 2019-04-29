@@ -18,7 +18,7 @@ public class Inventory {
 			JsonNode rootNode = mapper.readTree(file);
 			do {
 				System.out.println("Enter choice : ");
-				System.out.println("1 for Rice" + "\n2 for Wheat" + "\n3for Pulses");
+				System.out.println("1 for Roice" + "\n2 for Wheat" + "\n3for Pulses");
 				num = sc.nextInt();
 
 			} while (num < 0 || num > 4);
