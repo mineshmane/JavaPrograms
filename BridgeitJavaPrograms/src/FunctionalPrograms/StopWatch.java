@@ -10,6 +10,8 @@
 
 package FunctionalPrograms;
 
+import java.util.Scanner;
+
 import bridgeit.util.Utility;
 
 public class StopWatch {
@@ -41,6 +43,7 @@ public class StopWatch {
 			StopWatch stopWatch = new StopWatch();
 
 			System.out.println("Press '1' to Start Time: ");
+
 			Utility.getIntNumber();
 			stopWatch.start();
 

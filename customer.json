@@ -1,0 +1,56 @@
+[ {
+  "name" : "SHIVA",
+  "shivaShares" : 57,
+  "jokerShares" : 68,
+  "ravanaShares" : 30
+}, {
+  "name" : "RAVANA",
+  "shivaShares" : 70,
+  "jokerShares" : 41,
+  "ravanaShares" : 28
+}, {
+  "name" : "JOKER",
+  "shivaShares" : 35,
+  "jokerShares" : 37,
+  "ravanaShares" : 36
+}, {
+  "name" : "NIMBAGALKORI",
+  "shivaShares" : 15,
+  "jokerShares" : 7,
+  "ravanaShares" : 6
+}, {
+  "name" : "CHANNAVEERA",
+  "shivaShares" : 1,
+  "jokerShares" : 15,
+  "ravanaShares" : 40
+}, {
+  "name" : "CHANNA",
+  "shivaShares" : 0,
+  "jokerShares" : -4,
+  "ravanaShares" : 0
+}, {
+  "name" : "RADHYA",
+  "shivaShares" : 0,
+  "jokerShares" : 0,
+  "ravanaShares" : 0
+}, {
+  "name" : "RAVANARADHYA",
+  "shivaShares" : 0,
+  "jokerShares" : 0,
+  "ravanaShares" : 0
+}, {
+  "name" : "PRATHIMA",
+  "shivaShares" : -100,
+  "jokerShares" : -100,
+  "ravanaShares" : -100
+}, {
+  "name" : "",
+  "shivaShares" : 0,
+  "jokerShares" : 0,
+  "ravanaShares" : 0
+}, {
+  "name" : "YUI",
+  "shivaShares" : 0,
+  "jokerShares" : 0,
+  "ravanaShares" : 0
+} ]

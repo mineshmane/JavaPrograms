@@ -7,7 +7,6 @@
 	 *
 	 ******************************************************************************/
 
-
 package algorithmsPrograms;
 
 import bridgeit.util.Utility;
@@ -98,6 +97,7 @@ public class Methods {
 			case 4:
 
 				Utility.insertionString();
+				
 
 				break;
 
