@@ -5,7 +5,7 @@ import DSUtility.Queue;
 
 public class CashCounter {
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public static void main(String[] args) {
 		// String CusName;
 		int amount = 10000;

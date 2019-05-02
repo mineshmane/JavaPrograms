@@ -4,7 +4,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 
 public class Util {
-	@SuppressWarnings("unused")
+	@SuppressWarnings({ "unused", "rawtypes" })
 	private static void WriteToFile(LinkedList user){
 		  try {
 		    FileOutputStream fos = new FileOutputStream ("keep.dat");

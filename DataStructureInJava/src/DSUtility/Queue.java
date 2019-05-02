@@ -9,7 +9,7 @@ public class Queue<T> {
 	public static int capacity;
 	private int count;
 
-	/* calling constructor to intialize array size */
+	/* calling constructor to initialize array size */
 	public Queue(int size) {
 		arr=new Object[size];
 		capacity = size;
@@ -52,6 +52,7 @@ public class Queue<T> {
 	 * @purpose : To add a string element to object at front
 	 * @return : void
 	 */
+	@SuppressWarnings({ "unused", "rawtypes", "unchecked" })
 	public void enQueue(T data) {
 		Node<T> new_node = new Node(data);
 

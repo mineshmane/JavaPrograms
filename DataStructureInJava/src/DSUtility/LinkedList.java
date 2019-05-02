@@ -1,9 +1,5 @@
 package DSUtility;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
-
 public class LinkedList<T> {
 
 	@SuppressWarnings("rawtypes")
@@ -17,10 +13,11 @@ public class LinkedList<T> {
 	}
 
 	/**
-	 * @parm T : It takes generic datatype as command line arugument
+	 * @param T : It takes generic datatype as command line arguments
 	 * @purpose : This method is used to add String data to a linkedlist
 	 * @return : void
 	 **/
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void add(T data) {
 
 		Node node = new Node(); // creating nodes
@@ -31,7 +28,7 @@ public class LinkedList<T> {
 		} else {
 			Node newNode = head;
 
-			while (newNode.next != null) // take refrence values
+			while (newNode.next != null) // take reference values
 			{
 				newNode = newNode.next; // changing reference values
 			}
@@ -45,6 +42,7 @@ public class LinkedList<T> {
 	 *          object
 	 * @return : void
 	 **/
+	@SuppressWarnings("rawtypes")
 	public void displayList() {
 		if (isEmpty()) {
 			System.out.println("None");
@@ -65,27 +63,29 @@ public class LinkedList<T> {
 	 * @return : void
 	 **/
 
+	@SuppressWarnings("rawtypes")
 	public void display() {
 		Node n = head; // making n as head node
 
 		while (n.next != null) {
-			System.out.print(n.data + " "); // retreving the data
-			n = n.next; // changing refrence
+			System.out.print(n.data + " "); // Retrieving the data
+			n = n.next; // changing reference
 		}
-		System.out.println(n.data); // retreving last element
+		System.out.println(n.data); // Retrieving last element
 
 	}
 
 	/**
-	 * @parm T : It takes generic data type as command line argument
+	 * @param T : It takes generic data type as command line argument
 	 * @purpose : This method is used to search a specific element in a linked list
 	 * @return : boolean
 	 **/
 
+	@SuppressWarnings("rawtypes")
 	public boolean search(T word)
 
 	{
-		// @SuppressWarnings("rawtypes")
+		
 		Node newNode = head; // making n as head node
 
 		while (newNode.next != null)// next reference value
@@ -108,12 +108,13 @@ public class LinkedList<T> {
 	}
 
 	/**
-	 * @parm T : It takes generic data type as command line arugument
+	 * @param T : It takes generic data type as command line argument
 	 * @purpose : This method is used to delete a specific element at any position
 	 *          in a linkedlist
 	 * @return : void
 	 **/
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void delete(T ele)
 
 	{
@@ -135,10 +136,11 @@ public class LinkedList<T> {
 	}
 
 	/**
-	 * @parm T : It takes generic data type as command line arugument
+	 * @param T : It takes generic data type as command line argument
 	 * @purpose : This method is used to add element at first position of linkedlist
 	 * @return : void
 	 **/
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void addFirst(T data) {
 		Node node = new Node(); // creating object
 		node.data = data; // adding data to first node
@@ -166,10 +168,11 @@ public class LinkedList<T> {
 	}
 
 	/**
-	 * @purpose : This method is used delete element in frist in a list to
+	 * @purpose : This method is used delete element in first in a list to
 	 * @return : string
 	 **/
 
+	@SuppressWarnings({ "rawtypes", "unchecked", "hiding" })
 	public <T> T deletefirst() {
 		T item;
 		Node n = head;
@@ -183,6 +186,7 @@ public class LinkedList<T> {
 	 * @return : T
 	 **/
 
+	@SuppressWarnings({ "rawtypes", "unchecked", "hiding"})
 	public <T> T deleteAtlast() {
 		if (head == null)
 			return null;
@@ -207,7 +211,7 @@ public class LinkedList<T> {
 	 * @return : T
 	 **/
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes", "hiding" })
 	public <T> void insertAtLast(T data) {
 		Node node = new Node();
 		node.data = data;
@@ -229,6 +233,7 @@ public class LinkedList<T> {
 	 * @return : T
 	 **/
 
+	@SuppressWarnings({ "unchecked", "hiding" })
 	public <T> T getlast() {
 		@SuppressWarnings("rawtypes")
 		Node temp = head;
@@ -241,7 +246,7 @@ public class LinkedList<T> {
 
 	/**
 	 * @purpose : This method is used to check element in a list
-	 * @return : boolen
+	 * @return : boolean
 	 **/
 
 	public boolean isEmpty() {
@@ -257,6 +262,7 @@ public class LinkedList<T> {
 	 * @return : T
 	 **/
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public T push(T new_data) {
 		Node new_node = new Node();
 
@@ -271,6 +277,7 @@ public class LinkedList<T> {
 	 * @purpose : This method is used to element element at last in a list
 	 * @return : T
 	 **/
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public T last(T data) {
 		Node new_node = new Node();
 		new_node.data = data;
@@ -294,6 +301,7 @@ public class LinkedList<T> {
 		return data;
 	}
 
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void remove(String key) {
 		if (isEmpty()) {
 			System.out.println("can not delete empty list");

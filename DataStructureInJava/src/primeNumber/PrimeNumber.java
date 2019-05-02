@@ -1,9 +1,8 @@
 package primeNumber;
 
-import BridgeIt.util.Utility;
 import BridgeIt.util.utility;
 
-public class PrimeNumber <T>{
+public class PrimeNumber<T> {
 
 	public static void main(String[] args) {
 		int[] arr = utility.prime();

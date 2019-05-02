@@ -24,13 +24,13 @@ public class RegularExpression {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			System.out.println("mapper = " + mapper);
-			// it reads string from j son file using read tree method of ObjectMapper class
+			// it reads string from json file using read tree method of ObjectMapper class
 			JsonNode rootNode = mapper.readTree(file);
 
-			// it prints as it is json file
+			// it prints as it is j son file
 			System.out.println(" inside RootNode  :\n" + rootNode);
 
-			// Object of json file UsernAme is assigned to value vARIABLE
+			// Object of Json file UsernAme is assigned to value vARIABLE
 			String values = "Username";
 
 			// it prints objects of json file user name object key value pair
