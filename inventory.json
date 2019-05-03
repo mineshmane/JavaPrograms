@@ -1,36 +1,65 @@
 {"Rice":[
-	{
+	       {
 		"name":"Basmati Rice",
-		"weight":10,"price":110
+		"weight":10,
+		"price":110
 		},
 		{
-		"name":"White Rice",
-		"weight":50,"price":50
+		"name":"kokan Rice",
+		"weight":50,
+		"price":60
 		},
 		{
-		"name":"Brown Rice",
+		"name":"white Rice",
 		"weight":25,
-		"price":140
+		"price":100
+		},
+		{
+		"name":"Asami Rice",
+		"weight":25,
+		"price":150
+		},
+		{
+		"name":"Indrayani Rice",
+		"weight":25,
+		"price":147
+		},
+		{
+		"name":"brown Rice",
+		"weight":30,
+		"price":145
+		},{
+		"name":"Reshan Rice",
+		"weight":5,
+		"price":14
 		}
 		],
 
  "Pulses":[
 		{
-		"name":"Lobiae",
+		"name":"kidney Bean",
 		"weight":10,
 		"price":60
 		},
 		{
-		"name":"Chickpeas",
+		"name":"moong bean",
 		"weight":25,"price":100
 		},
 		{		
-		"name":"Green Gram",
+		"name":"Green Peas",
+		"weight":25,"price":140
+		},
+		{		
+		"name":"Moth Bean",
+		"weight":25,"price":140
+		},
+		{		
+		"name":"Toor Dal",
 		"weight":25,"price":140
 		}
 		],
 
-  "Wheat":[
+  "Wheats":[
 		{
 		"name":"Puja Tejas",
 		"weight":50,"price":40

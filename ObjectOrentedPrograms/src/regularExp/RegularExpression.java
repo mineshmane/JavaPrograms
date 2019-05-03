@@ -17,7 +17,7 @@ public class RegularExpression {
 		Scanner scannerforString = new Scanner(System.in);
 
 		// path of file stored in path variable
-		final String path = "/home/admin1/re.json";
+		final String path = "/home/admin1/eclipse-workspace/re.json";
 		File file = new File(path);
 
 		// Object of ObjectMapper class

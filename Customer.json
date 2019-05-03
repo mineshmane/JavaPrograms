@@ -1,0 +1,26 @@
+[ {
+  "name" : "SHRUTI",
+  "ibmShares" : 0,
+  "infosysShares" : -90,
+  "wiproShares" : 0
+}, {
+  "name" : "MINESH",
+  "ibmShares" : 0,
+  "infosysShares" : 0,
+  "wiproShares" : 0
+}, {
+  "name" : "PATIL",
+  "ibmShares" : -67,
+  "infosysShares" : 0,
+  "wiproShares" : 0
+}, {
+  "name" : "MIN",
+  "ibmShares" : -180,
+  "infosysShares" : 0,
+  "wiproShares" : 0
+}, {
+  "name" : "RAHUL",
+  "ibmShares" : 0,
+  "infosysShares" : 0,
+  "wiproShares" : 0
+} ]

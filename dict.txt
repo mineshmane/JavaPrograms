@@ -1,0 +1,7 @@
+json
+linkedlist
+datatype
+int
+jan
+dec
+arraylist

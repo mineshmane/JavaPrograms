@@ -4,6 +4,7 @@ public class LinkedList<T> {
 
 	@SuppressWarnings("rawtypes")
 	Node head; // Declaring head node
+	int counter=0;
 
 	@SuppressWarnings("hiding")
 	public class Node<T> {
@@ -20,7 +21,7 @@ public class LinkedList<T> {
 	public void add(T data) {
 		Node node = new Node(); // creating nodes
 		node.data = data;// adding data
-
+counter++;
 		if (head == null) {
 			head = node; // make head as a first node
 		} else {
@@ -116,6 +117,7 @@ public class LinkedList<T> {
 	{
 		Node n = head;
 		Node n1 = head;
+		counter--;
 
 		if (n.data.equals(ele)) // checking head element with user search element to delete
 		{
@@ -142,6 +144,7 @@ public class LinkedList<T> {
 		node.data = data; // adding data to first node
 		node.next = head;
 		head = node;
+		counter++;
 
 	}
 
@@ -174,7 +177,9 @@ public class LinkedList<T> {
 		Node n = head;
 		head = n.next;
 		item = (T) n.data;
+		counter--;
 		return item;
+	
 	}
 
 	@SuppressWarnings("rawtypes")
@@ -201,6 +206,7 @@ public class LinkedList<T> {
 
 	@SuppressWarnings({ "hiding", "unchecked", "rawtypes" })
 	public <T> T deleteAtlast() {
+		counter--;
 		if (head == null)
 			return null;
 		else {
@@ -227,6 +233,7 @@ public class LinkedList<T> {
 	@SuppressWarnings({ "unchecked", "rawtypes", "hiding" })
 	public <T> void insertAtLast(T data) {
 		Node node = new Node();
+		counter++;
 		node.data = data;
 		if (head == null) {
 			head = node;
@@ -278,7 +285,7 @@ public class LinkedList<T> {
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public T push(T new_data) {
 		Node new_node = new Node();
-
+		counter++;
 		new_node.next = head;
 		head = new_node;
 		// System.out.println("push:"+new_node.data);
@@ -322,6 +329,7 @@ public class LinkedList<T> {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	public void remove(String key) {
+		counter--;
 		if (isEmpty()) {
 			System.out.println("can not delete empty list");
 		} else {
@@ -355,6 +363,11 @@ public class LinkedList<T> {
 				}
 			}
 		}
+	}
+
+	public int size() {
+		// TODO Auto-generated method stub
+		return counter;
 	}
 
 }

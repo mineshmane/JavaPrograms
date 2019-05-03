@@ -31,8 +31,8 @@ public class StockAccount {
 	@SuppressWarnings("unused")
 	private CompanyShares companyShares;
 	static ObjectMapper objectmapper = new ObjectMapper();
-	File customerfile = new File("/home/admin1/Customer.json");
-	File companySharefile = new File("/home/admin1/companyShares.json");
+	File customerfile = new File("/home/admin1/eclipse-workspace/Customer.json");
+	File companySharefile = new File("/home/admin1/eclipse-workspace/companyShares.json");
 
 	public StockAccount() {
 
@@ -55,15 +55,21 @@ public class StockAccount {
 			System.out.println("Enter Customer/Person Name");
 			String searchName = Utility.getString().toUpperCase();
 			int index = StockUtility.searchCustomerIndex(searchName, customerList);
+			System.out.println("index = " + index);
+
 			if (index != -1) {
 				Customer customer = new Customer();
 
 				customer = customerList.get(index);
-				int ibmShare = companySharesList.get(index).getPrice() * customer.getIbmShares();
-				int infosysShare = companySharesList.get(index).getPrice() * customer.getInfosysShares();
-				int wiproShare = companySharesList.get(index).getPrice() * customer.getWiproShares();
+				System.out.println(" customer =" + customer);
+
+				int ibmShare = companySharesList.get(0).getPrice() * customer.getIbmShares();
+
+				int infosysShare = companySharesList.get(1).getPrice() * customer.getInfosysShares();
+				int wiproShare = companySharesList.get(2).getPrice() * customer.getWiproShares();
 				int totalValue = ibmShare + infosysShare + wiproShare;
-				System.out.println("Totalshare "+totalValue);
+				System.out.println(" total Value OF Stock =: " + totalValue + "  ibm:  " + ibmShare + "  infosys : "
+						+ infosysShare + "  wioro  " + wiproShare);
 
 				System.out.print("\nTotal Value of Stock: ");
 
@@ -267,7 +273,6 @@ public class StockAccount {
 			queue.push(str);
 
 			stacklist.print();
-			System.out.println(queue);
 
 			// System.out.println(""+str);
 		} catch (IOException e) {

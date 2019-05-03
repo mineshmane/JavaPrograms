@@ -2,7 +2,7 @@ package commercialDataPro;
 
 import java.util.Scanner;
 
-public class Runnable {
+public class Runner {
 
 	@SuppressWarnings({ "unused", "resource" })
 	 
@@ -13,7 +13,7 @@ public class Runnable {
 		boolean value = true;
 
 		while (value) {
-			StockAccount stockA = new StockAccount();
+			StockAccount stockAccount = new StockAccount();
 
 			System.out.println("Enter the choice");
 			System.out.println("1. Add Stock Account");
@@ -29,9 +29,9 @@ public class Runnable {
 				break;
 
 			case 2:
-				double totalValue = stockA.valueOf();
+				double totalValue = stockAccount.valueOf();
 				if (totalValue >= 0) {
-					System.out.println(totalValue);
+					System.out.println("total value "+totalValue);
 				}
 				break;
 
@@ -40,7 +40,7 @@ public class Runnable {
 				int shares = scint.nextInt();
 				System.out.println("Enter the Symbol");
 				String symbol = scstr.next().toUpperCase();
-				stockA.buy(shares, symbol);
+				stockAccount.buy(shares, symbol);
 				break;
 
 			case 4:
@@ -48,11 +48,11 @@ public class Runnable {
 				shares = scint.nextInt();
 				System.out.println("Enter the Symbol");
 				symbol = scstr.next().toUpperCase();
-				stockA.sell(shares, symbol);
+				stockAccount.sell(shares, symbol);
 				break;
 
 			case 5:
-				stockA.printReport();
+				stockAccount.printReport();
 				break;
 
 			case 6:
@@ -66,5 +66,4 @@ public class Runnable {
 
 		}
 	}
-
 }

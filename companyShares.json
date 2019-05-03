@@ -1,0 +1,19 @@
+[ {
+  "companyName" : "IBM",
+  "stockSymbol" : "T",
+  "noOfShares" : 810,
+  "price" : 1200,
+  "dateTime" : "Fri May 03 15:30:43 IST 2019"
+}, {
+  "companyName" : "Infosys",
+  "stockSymbol" : "I",
+  "noOfShares" : 636,
+  "price" : 1000,
+  "dateTime" : "Fri May 03 15:30:43 IST 2019"
+}, {
+  "companyName" : "Wipro",
+  "stockSymbol" : "W",
+  "noOfShares" : 555,
+  "price" : 1500,
+  "dateTime" : "Fri May 03 15:30:43 IST 2019"
+} ]

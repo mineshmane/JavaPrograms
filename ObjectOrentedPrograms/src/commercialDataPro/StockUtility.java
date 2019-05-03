@@ -19,7 +19,7 @@ public class StockUtility {
 	 ********************************************************************/
 
 	public static void addAccount(String fileName) {
-		fileName = "/home/admin1/" + fileName;
+		fileName = "/home/admin1/eclipse-workspace/" + fileName;
 		try {
 			List<Customer> customerList = objectmapper.readValue(new File(fileName),
 					new TypeReference<List<Customer>>() {
@@ -55,14 +55,18 @@ public class StockUtility {
 	public static int searchCustomerIndex(String searchName, List<Customer> customerList) {
 		int count = 0;
 		int index = -1;
+		//System.out.println(" list ="+customerList+" size = "+customerList.size());
 		for (int i = 0; i < customerList.size(); i++) {
 			count = 0;
 			String custName = customerList.get(i).getName();
 			if (searchName.compareTo(custName) == 0) {
 				index = i;
+	
+				
 				break;
 			} else {
 				count++;
+		
 			}
 		}
 		if (count != 0) {
