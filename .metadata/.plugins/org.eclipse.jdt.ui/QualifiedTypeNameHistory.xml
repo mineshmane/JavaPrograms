@@ -20,4 +20,5 @@
     <fullyQualifiedTypeName name="bridgeIT.Utility"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="regularExp.LinkedList"/>
+    <fullyQualifiedTypeName name="commercialDataPro.LinkedList"/>
 </qualifiedTypeNameHistroy>

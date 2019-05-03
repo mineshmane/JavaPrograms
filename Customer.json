@@ -5,9 +5,9 @@
   "wiproShares" : 0
 }, {
   "name" : "MINESH",
-  "ibmShares" : 0,
-  "infosysShares" : 0,
-  "wiproShares" : 0
+  "ibmShares" : -56,
+  "infosysShares" : -67,
+  "wiproShares" : -45
 }, {
   "name" : "PATIL",
   "ibmShares" : -67,
