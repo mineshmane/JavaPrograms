@@ -8,14 +8,18 @@ import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class FileSystem implements IAddress {
+	Person person;
 	public static List<Person> personList = null;
+	
 	public static ObjectMapper objM = new ObjectMapper();
+	
 
 	public static void setList(List<Person> personList) {
 		FileSystem.personList = personList;
 	}
+	
 
-	public static List<Person> getList() {
+	public static getList<Person> getList() {
 		return personList;
 	}
 
