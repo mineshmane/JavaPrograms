@@ -2,97 +2,54 @@ package DSUtility;
 
 public class Queue<T> {
 
-	LinkedList<T> ls = new LinkedList<>();
-	private Object arr[];
-	private int front=-1;
-	public int rear=-1;
-	public static int capacity;
-	private int count;
+	String arr[];
+	int front;
+	int rear;
+	int capacity;
+	int currentSize;
 
 	/* calling constructor to initialize array size */
-	public Queue(int size) {
-		arr=new Object[size];
-		capacity = size;
-		front = 0;
-	    rear = -1;
-		count = 0;
+	public Queue(int capacity) {
+
+		this.capacity = capacity;
+		arr = new String[capacity];
 	}
 
-	public static class Node<T> {
-		T data;
-		T next;
-
-		Node(T d) {
-			data = d;
-			next = null;
-		}
-	}
+	
 
 	/**
-	 * @purpose : to find objects are full are not in object
-	 * @return : boolean
-	 */
-
-	public Boolean isFull() {
-		return (size() == capacity);
-	}
-
-	public Boolean isEmpty() {
-		if(front==-1&&rear==-1) {
-			System.out.println("Emty que");
-			return true;
-		}else {
-			return false;
-		}
-		
-	}
-
-	/**
-	 * @param string : It takes string as command line arguments
 	 * @purpose : To add a string element to object at front
 	 * @return : void
 	 */
-	@SuppressWarnings({ "unused", "rawtypes", "unchecked" })
-	public void enQueue(T data) {
-		Node<T> new_node = new Node(data);
 
-		if (isFull()) {
-			System.out.println("OverFlow\nProgram Terminated");
-			System.exit(1);
-		} else {
+	public void enQueue(String data) {
 
-			// System.out.print(" "+ new_node.data);
+		arr[rear] = data;
+		rear++;// Rear is incremented by one 
 
-			rear = (rear + 1) % capacity;
-			arr[rear] = ls.last(data);
-			count++;
-		}
+		currentSize++;
 
 	}
 
 	/**
 	 * @purpose : to find no of elements in object
-	 * @return : int
+	 * @return : integer total number of element in queue
 	 */
 	public int size() {
-		return count; // returns the size of array
+		return currentSize; // returns the size of array
 	}
 
 	/**
 	 * @purpose : To remove element
 	 * @return : void
 	 */
+	@SuppressWarnings("unused")
 	public void deQueue() {
-		if (isEmpty()) {
-			System.out.println("UnderFlow\nProgram Terminated");
-			System.exit(1);
-		} else {
-			System.out.println("Removing " + arr[front]);
 
-			front = (front + 1) % capacity;
-			count--;
-		}
-// changing position to remove element
+		String temp = arr[front];
+		front++;  // front is ++  changing position to removed element
+		System.out.println("removed from queue  "+front);
+		currentSize--;
 
 	}
 
@@ -103,7 +60,7 @@ public class Queue<T> {
 
 	public void show() {
 		/* for loop to display all elements in queue */
-		for (int i = 0; i < count; i++) {
+		for(int i = 0; i <currentSize; i++) {
 			System.out.print(arr[front + i] + " ");
 		}
 		System.out.println();

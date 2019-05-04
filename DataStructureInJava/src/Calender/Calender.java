@@ -1,6 +1,5 @@
 package Calender;
 
-
 public class Calender {
 
 	public static int day(int month, int day, int year) {
@@ -14,7 +13,7 @@ public class Calender {
 	// return true if the given year is a leap year
 	public static boolean isLeapYear(int year) {
 
-		//Utility.cheakleapYear(year);
+		//utility.chackLeapYear(year);
 
 		if ((year % 4 == 0) && (year % 100 != 0)) {
 			return true;
@@ -36,7 +35,7 @@ public class Calender {
 				"November", "December" };
 
 		// days[i] = number of days in month i
-		int[] days = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+		int[] days = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
 
 		// check for leap year
 		if (month == 2 && isLeapYear(year))
